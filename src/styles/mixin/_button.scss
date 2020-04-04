@@ -1,0 +1,13 @@
+@mixin button_model($main-color, $active-color, $highlight-color, $radius) {
+  background-color: $main-color;
+  border-radius: $radius;
+
+  &:hover,
+  &:focus {
+    background-color: $highlight-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+}
