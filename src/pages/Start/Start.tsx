@@ -1,24 +1,28 @@
-import React from 'react';
-import './Start.scss'
+import React from "react";
+import "./Start.scss";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 
-const Start: React.FC = () => {
+interface Props {
+  id: string;
+}
 
+const Start: React.FC<Props> = () => {
   return (
-    <div className={'Start'}>
-      <div className={'Start__container'}>
+    <div className={"start"}>
+      <div className={"start__container"}>
         <div>
-          <span className={'Start__title'}>Bem vindo!</span><br/>
-          <span className={'Start__subtitle'}>É um estudante ou professor?</span>
+          <span className={"start__title"}>Bem vindo!</span>
+          <br />
+          <span className={"start__subtitle"}>
+            É um estudante ou professor?
+          </span>
         </div>
         <div>
-          <Input placeholder={"Matricula:"}/>
+          <Input placeholder={"Matricula:"} />
           <Button text={"Entrar"} />
         </div>
-        <span className={'Start__guest'}>
-          Entrar como visitante
-        </span>
+        <span className={"start__guest"}>Entrar como visitante</span>
       </div>
     </div>
   );
