@@ -1,5 +1,5 @@
-import React from "react";
-import Start from "./pages/Start/Start";
+import React from 'react';
+import Start from './pages/Start/Start';
 
 function App() {
   return (

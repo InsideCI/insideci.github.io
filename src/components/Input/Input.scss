@@ -1,7 +1,7 @@
-@import "../../styles/global";
+@import '../../styles/global';
 
-.Input {
-  input {
+.input {
+  &__field {
     color: $primary-color;
 
     border: 0;
@@ -12,5 +12,13 @@
       outline: none !important;
       border: 1px solid $primary-color;
     }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  &__error {
+    color: $error-color;
   }
 }
