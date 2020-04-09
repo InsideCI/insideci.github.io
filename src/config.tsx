@@ -1,7 +1,7 @@
 // CINSIDE
-export const port = 3000;
+export const PORT = 3000;
 
 // NEGO
 
-export const api_address = 'http://192.168.1.200';
-export const api_port = ':8081';
+export const API_ADDRESS = 'http://localhost';
+export const API_PORT = ':8080';

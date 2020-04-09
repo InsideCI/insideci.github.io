@@ -1,15 +1,6 @@
-import { NewConnection } from '../../store/client';
-import { Student, Teacher } from '../../store/types';
+import { NewGenericAPI } from 'store/client';
+import { Student } from 'store/types/models';
 
-export const getMember = (id: number): Student | Teacher | null => {
-  const student = NewConnection()
-    .request<Student>({
-      url: `/students/${id}`,
-      transformResponse: (r: any) => r.data,
-    })
-    .then((response) => response.data);
+export const STUDENTS_RESOURCE = 'students';
 
-  // TODO: create a generic NewConnection with basic methods.
-
-  return null;
-};
+export const StartAPI = NewGenericAPI<Student>(STUDENTS_RESOURCE);

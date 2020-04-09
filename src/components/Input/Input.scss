@@ -2,11 +2,11 @@
 
 .input {
   &__field {
-    color: $primary-color;
-
     border: 0;
-
+    font-weight: bold;
+    color: $primary-color;
     padding: $space-s;
+    background-color: $background-main;
 
     :focus {
       outline: none !important;
