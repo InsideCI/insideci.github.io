@@ -15,7 +15,6 @@ type Props = JSX.IntrinsicElements['div'];
 
 const Start: React.FC<Props> = () => {
   const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState(false);
   const [user, setUser] = useState<Student>();
 
   const onSubmit: SubmitHandler<Form> = (formData) => {

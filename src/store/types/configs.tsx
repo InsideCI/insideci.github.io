@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios';
 
 export interface Params {
-  page: number;
-  limit: number;
-  order: Array<string>;
+  page?: number;
+  limit?: number;
+  order?: Array<string>;
 }
 
 export interface GenericApi<T> {
