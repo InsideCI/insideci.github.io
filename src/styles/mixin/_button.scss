@@ -1,15 +1,8 @@
-@mixin button_model($main-color, $active-color, $highlight-color, $radius) {
-  background-color: $main-color;
-  border-radius: $radius;
-  transition: $timing-s;
-
-  &:hover {
-    transition: $timing-s;
-    background-color: $highlight-color;
-  }
-
-  &:active {
-    transition: $timing-s;
-    background-color: $active-color;
+@mixin hide_arrows() {
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }

@@ -43,6 +43,7 @@
     color: $primary-color;
     border-radius: $radius-xl;
     background-color: $background-main;
+    @include hide_arrows();
   }
 
   button {

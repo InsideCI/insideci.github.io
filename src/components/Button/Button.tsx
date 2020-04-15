@@ -1,14 +1,12 @@
 import React from 'react';
 import './Button.scss';
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   color?: string;
 }
 
-type ButtonProps = JSX.IntrinsicElements['button'] & Props;
-
-const Button: React.FC<ButtonProps> = ({ text, ...rest }) => {
+const Button: React.FC<Props> = ({ text, ...rest }) => {
   return (
     <button className={'button'} {...rest}>
       {text}

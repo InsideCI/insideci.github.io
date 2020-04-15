@@ -11,7 +11,7 @@ interface Form {
   id: number;
 }
 
-type Props = JSX.IntrinsicElements['div'];
+type Props = React.HTMLProps<HTMLDivElement>;
 
 const Start: React.FC<Props> = () => {
   const [loaded, setLoaded] = useState(false);
@@ -51,7 +51,7 @@ const Start: React.FC<Props> = () => {
                   <Button text={'Entrar'} type={'submit'} />
                 </Form>
               </div>
-              <span className={'start__guest'}>Entrar como visitante</span>{' '}
+              <span className={'start__guest'}>Entrar como visitante</span>
             </>
           )}
         </div>

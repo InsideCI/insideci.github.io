@@ -2,14 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 import './Input.scss';
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
 }
 
-type InputProps = JSX.IntrinsicElements['input'] & Props;
-
-const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
+const Input: React.FC<Props> = ({ name, label, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
 
