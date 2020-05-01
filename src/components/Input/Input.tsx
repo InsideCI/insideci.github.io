@@ -1,15 +1,23 @@
-import React, { useRef, useEffect } from 'react';
-import { useField } from '@unform/core';
 import './Input.scss';
+
+import React, { useEffect, useRef } from 'react';
+
+import classNames from 'classnames';
+import { useField } from '@unform/core';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
+  color?: string;
 }
 
-const Input: React.FC<Props> = ({ name, label, ...rest }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+const Input: React.FC<Props> = (props) => {
+  const { name, label, color, ...rest } = props;
+
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const classes = classNames(color ? color : 'transparent');
 
   useEffect(() => {
     registerField({
@@ -23,7 +31,8 @@ const Input: React.FC<Props> = ({ name, label, ...rest }) => {
     <div className={'input'}>
       {label && <label htmlFor={fieldName}>{label}</label>}
       <input
-        className={'input__field'}
+        autoComplete={'off'}
+        className={classes}
         id={fieldName}
         ref={inputRef}
         defaultValue={defaultValue}

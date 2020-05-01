@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
 import './Start.scss';
-import Input from 'components/Input/Input';
-import Button from 'components/Button/Button';
-import { SubmitHandler } from '@unform/core';
+
+import React, { useState } from 'react';
+
+import Button from 'components/Button';
 import { Form } from '@unform/web';
+import Input from 'components/Input';
 import { StartAPI } from './store';
 import { Student } from 'store/types/models';
+import { SubmitHandler } from '@unform/core';
 
 interface Form {
   id: number;
@@ -26,35 +28,16 @@ const Start: React.FC<Props> = () => {
 
   return (
     <>
-      <div className={'start'}>
-        <div className={'start__container'}>
-          {loaded ? (
-            <div>bem vindo {user?.nome.split(' ')[0]}</div>
-          ) : (
-            <>
-              <div>
-                <span className={'start__title'}>Bem vindo!</span>
-                <br />
-                <span className={'start__subtitle'}>
-                  É um estudante ou professor?
-                  <br />
-                  Insira sua matricula abaixo
-                </span>
-              </div>
-              <div>
-                <Form onSubmit={onSubmit}>
-                  <Input
-                    type={'number'}
-                    name={'id'}
-                    placeholder={'Matricula:'}
-                  />
-                  <Button text={'Entrar'} type={'submit'} />
-                </Form>
-              </div>
-              <span className={'start__guest'}>Entrar como visitante</span>
-            </>
-          )}
-        </div>
+      <div className={'landing'}>
+        <Form onSubmit={onSubmit}>
+          <Input
+            label={'Matricula'}
+            type={'number'}
+            name={'id'}
+            placeholder={'type your registration'}
+          />
+          <Button text={'ENTRAR'} type={'submit'} />
+        </Form>
       </div>
     </>
   );

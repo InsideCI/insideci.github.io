@@ -1,54 +1,22 @@
 @import '../../styles/global';
 
-.start {
+.landing {
   width: 100%;
   height: 100vh;
 
-  background-color: $primary-color;
+  background: linear-gradient(
+    207.37deg,
+    #1d3561 0.98%,
+    #091d42 0.99%,
+    rgba(15, 39, 83, 0.93) 32.44%,
+    rgba(22, 48, 95, 0.85) 65.45%,
+    rgba(29, 53, 97, 0.81) 100%
+  );
   color: black;
 
-  text-align: center;
-
   display: flex;
+
+  text-align: center;
   justify-content: center;
   align-items: center;
-
-  &__container {
-    -webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.5);
-
-    padding: $space-m;
-    border-radius: $radius-m;
-    background-color: $secondary-color;
-    animation: elevate $timing-xl linear;
-
-    display: grid;
-    grid-gap: $space-s;
-    grid-template-rows: 1fr 1fr 0.5fr;
-    align-items: center;
-  }
-
-  &__title {
-    font-size: $font-size-m;
-  }
-
-  &__subtitle,
-  &__guest {
-    color: $font-color-secondary;
-    font-size: $font-size-xs;
-  }
-
-  input {
-    color: $primary-color;
-    border-radius: $radius-xl;
-    background-color: $background-main;
-    @include hide_arrows();
-  }
-
-  button {
-    margin-top: $space-s;
-    width: 100%;
-    color: $background-light;
-  }
 }

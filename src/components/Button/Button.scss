@@ -1,9 +1,9 @@
 @import '../../styles/global';
 
-@mixin button_model($main-color, $active-color, $highlight-color, $radius) {
-  background-color: $main-color;
+@mixin button($main-color, $active-color, $highlight-color, $radius) {
   border-radius: $radius;
   transition: $timing-s;
+  background-color: $main-color;
 
   &:hover {
     transition: $timing-s;
@@ -17,12 +17,21 @@
 }
 
 .button {
-  @include button_model(
-    $primary-color,
-    $active-color,
-    $highlight-color,
-    $radius-xl
-  );
+  &.primary {
+    @include button($primary-color, $active-color, $highlight-color, $radius-s);
+  }
+
+  &.white {
+    @include button($primary-color, $active-color, $highlight-color, $radius-s);
+  }
+
+  &.transparent {
+    @include button(transparent, transparent, transparent, $radius-s);
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
 
   width: fit-content;
   padding: $space-s;
