@@ -3,6 +3,7 @@
 .landing {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 
   background: linear-gradient(
     207.37deg,
@@ -12,11 +13,55 @@
     rgba(22, 48, 95, 0.85) 65.45%,
     rgba(29, 53, 97, 0.81) 100%
   );
-  color: black;
 
+  display: grid;
+  grid-template-rows: 20% auto 20%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+header {
+  padding: $space-s;
+
+  h1 {
+    color: $font-color-light;
+    width: 50%;
+    animation: fade-in 2s ease;
+  }
+
+  .logo {
+    top: 0;
+  }
+}
+
+.description {
+  padding: $space-s;
+  background-color: $background-light;
+  border-radius: $radius-l $radius-l 0 0;
+
+  p {
+    padding-top: $space-m 0;
+  }
+}
+
+.credentials {
   display: flex;
+  flex-direction: column;
 
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  section {
+    display: flex;
+  }
+
+  button {
+    padding-top: $space-s;
+    text-align: center;
+    font-size: $font-size-xxs;
+  }
 }

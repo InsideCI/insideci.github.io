@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import Button from 'components/Button';
 import { Form } from '@unform/web';
-import Input from 'components/Input';
+import { ParticleCanvas } from './Particles';
 import { StartAPI } from './store';
 import { Student } from 'store/types/models';
 import { SubmitHandler } from '@unform/core';
@@ -27,19 +27,32 @@ const Start: React.FC<Props> = () => {
   };
 
   return (
-    <>
-      <div className={'landing'}>
-        <Form onSubmit={onSubmit}>
+    <div className={'landing'}>
+      <header>
+        <h1>Welcome to CInside</h1>
+      </header>
+      <section>
+        <ParticleCanvas />
+      </section>
+      <section className={'description'}>
+        <Button text={'Overview'} />
+        <Button text={'About'} />
+        <p>Descrição do CInside</p>
+      </section>
+      {/* <Form className={'credentials'} onSubmit={onSubmit}>
+        <section>
           <Input
-            label={'Matricula'}
+            // label={'Matricula'}
             type={'number'}
             name={'id'}
             placeholder={'type your registration'}
+            full
           />
-          <Button text={'ENTRAR'} type={'submit'} />
-        </Form>
-      </div>
-    </>
+          <Button text={'ENTER'} type={'submit'} />
+        </section>
+        <Button text={"I'M JUST A GUEST"} type={'submit'} />
+      </Form> */}
+    </div>
   );
 };
 

@@ -1,13 +1,15 @@
 @import '../../styles/global';
 
-@mixin button($main-color, $active-color, $highlight-color, $radius) {
-  border-radius: $radius;
+@mixin button($main-color, $active-color, $highlight-color) {
   transition: $timing-s;
   background-color: $main-color;
+  outline: none;
+  position: relative;
 
   &:hover {
-    transition: $timing-s;
     background-color: $highlight-color;
+    font-weight: bold;
+    transition: font-weight $timing-s;
   }
 
   &:active {
@@ -18,22 +20,29 @@
 
 .button {
   &.primary {
-    @include button($primary-color, $active-color, $highlight-color, $radius-s);
+    @include button($primary-color, $active-color, $highlight-color);
   }
 
   &.white {
-    @include button($primary-color, $active-color, $highlight-color, $radius-s);
+    @include button($primary-color, $active-color, $highlight-color);
   }
 
   &.transparent {
-    @include button(transparent, transparent, transparent, $radius-s);
+    @include button(transparent, transparent, transparent);
   }
 
   &.uppercase {
     text-transform: uppercase;
   }
 
-  width: fit-content;
+  &.full {
+    width: 100%;
+  }
+
+  &.round {
+    border-radius: $radius-m;
+  }
+
   padding: $space-s;
 
   border: 0;
