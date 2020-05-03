@@ -10,6 +10,7 @@
     background-color: $highlight-color;
     font-weight: bold;
     transition: font-weight $timing-s;
+    text-shadow: 0 0 $space-xs rgba(255, 255, 255, 0.65) !important;
   }
 
   &:active {
@@ -41,6 +42,14 @@
 
   &.round {
     border-radius: $radius-m;
+  }
+
+  &.light {
+    color: $background-light;
+  }
+
+  &.faded {
+    opacity: 0.25;
   }
 
   padding: $space-s;

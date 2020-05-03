@@ -1,67 +1,55 @@
 @import '../../styles/global';
 
 .landing {
+  margin: 0;
   width: 100%;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 
-  background: linear-gradient(
-    207.37deg,
-    #1d3561 0.98%,
-    #091d42 0.99%,
-    rgba(15, 39, 83, 0.93) 32.44%,
-    rgba(22, 48, 95, 0.85) 65.45%,
-    rgba(29, 53, 97, 0.81) 100%
-  );
-
+  background-color: #071034;
   display: grid;
-  grid-template-rows: 20% auto 20%;
-}
+  grid-template-rows: 95% 5%;
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
+  a {
+    color: $font-color-light;
+    padding-left: $space-m;
+    text-decoration: none;
   }
 }
 
 header {
-  padding: $space-s;
+  color: $font-color-light;
+  position: absolute;
 
-  h1 {
-    color: $font-color-light;
-    width: 50%;
-    animation: fade-in 2s ease;
-  }
+  top: 10%;
+  left: -10%;
 
-  .logo {
-    top: 0;
-  }
-}
-
-.description {
-  padding: $space-s;
-  background-color: $background-light;
-  border-radius: $radius-l $radius-l 0 0;
-
-  p {
-    padding-top: $space-m 0;
-  }
+  font-size: calc(100vw / 3);
+  font-weight: 100;
+  opacity: 0.05;
 }
 
 .credentials {
-  display: flex;
-  flex-direction: column;
+  justify-self: center;
+  width: 100%;
+  height: 100%;
 
-  section {
-    display: flex;
+  * {
+    font-size: $font-size-s;
   }
 
-  button {
-    padding-top: $space-s;
-    text-align: center;
-    font-size: $font-size-xxs;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  input {
+    width: 50%;
+    align-self: center;
+  }
+
+  :nth-child(3) {
+    margin-top: $space-l;
   }
 }

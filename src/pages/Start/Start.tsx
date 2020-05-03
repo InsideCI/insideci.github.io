@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import Button from 'components/Button';
 import { Form } from '@unform/web';
-import { ParticleCanvas } from './Particles';
+import Input from 'components/Input';
 import { StartAPI } from './store';
 import { Student } from 'store/types/models';
 import { SubmitHandler } from '@unform/core';
@@ -24,34 +24,27 @@ const Start: React.FC<Props> = () => {
       setLoaded(true);
       setUser(response.data);
     });
+    console.log({ loaded, user });
   };
 
   return (
     <div className={'landing'}>
-      <header>
-        <h1>Welcome to CInside</h1>
-      </header>
-      <section>
-        <ParticleCanvas />
-      </section>
-      <section className={'description'}>
-        <Button text={'Overview'} />
-        <Button text={'About'} />
-        <p>Descrição do CInside</p>
-      </section>
-      {/* <Form className={'credentials'} onSubmit={onSubmit}>
-        <section>
+      <header>CInside</header>
+
+      <Form onSubmit={onSubmit}>
+        <section className={'credentials'}>
           <Input
-            // label={'Matricula'}
-            type={'number'}
             name={'id'}
-            placeholder={'type your registration'}
+            type={'number'}
+            placeholder={'registration'}
+            small
             full
           />
-          <Button text={'ENTER'} type={'submit'} />
+          <Button text={'ENTER'} type={'submit'} light />
+          <Button text={'enter as a guest'} type={'submit'} light faded />
         </section>
-        <Button text={"I'M JUST A GUEST"} type={'submit'} />
-      </Form> */}
+      </Form>
+      <a href={'https://github.com/InsideCI/insideci.github.io'}>github</a>
     </div>
   );
 };

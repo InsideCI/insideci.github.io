@@ -1,17 +1,20 @@
-import { useField } from '@unform/core';
-import classNames from 'classnames';
-import React, { useEffect, useRef } from 'react';
 import './Input.scss';
+
+import React, { useEffect, useRef } from 'react';
+
+import classNames from 'classnames';
+import { useField } from '@unform/core';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   color?: string;
+  small?: boolean;
   full?: boolean;
 }
 
 const Input: React.FC<Props> = (props) => {
-  const { name, label, color, full, ...rest } = props;
+  const { name, label, color, small, full, ...rest } = props;
 
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -19,6 +22,7 @@ const Input: React.FC<Props> = (props) => {
   const classesComponent = classNames('input', full && 'full');
   const classesInput = classNames(
     color ? color : 'transparent',
+    small && 'small',
     full && 'full'
   );
 

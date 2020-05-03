@@ -8,15 +8,19 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   color?: string;
   round?: boolean;
+  light?: boolean;
+  faded?: boolean;
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { text, icon, color, round, ...rest } = props;
+  const { text, icon, color, round, light, faded, ...rest } = props;
 
   const classes = classNames(
     'button',
     color ? color : 'transparent',
-    round && 'round'
+    round && 'round',
+    light && 'light',
+    faded && 'faded'
   );
 
   return (

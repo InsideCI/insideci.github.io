@@ -1,14 +1,11 @@
 @import '../../styles/global';
 
-@mixin input($bg-color, $ph-color) {
+@mixin input($bg-color, $ph-color, $text-color) {
   background-color: $bg-color;
+  color: $text-color;
 
   &::placeholder {
     color: $ph-color;
-  }
-
-  :focus {
-    color: transparent;
   }
 
   &::-webkit-outer-spin-button,
@@ -35,27 +32,26 @@
   }
 
   input {
-    text-align: center;
-    font-weight: bold;
-    padding: $space-s;
+    padding: $space-xs;
 
     &.primary {
-      @include input($primary-color, $placeholder-light);
+      @include input($primary-color, $placeholder-light, $background-light);
     }
 
     &.light {
-      @include input($secondary-color, $placeholder-color);
+      @include input($secondary-color, $placeholder-dark, $primary-color);
     }
 
     &.transparent {
-      @include input(transparent, $placeholder-light);
+      @include input(transparent, $placeholder-light, $background-light);
       border-top: none;
       border-left: none;
       border-right: none;
-      border-color: $primary-color;
+      border-color: $background-light;
     }
 
     outline: none;
+
     &:focus::placeholder {
       color: transparent;
     }
