@@ -1,7 +1,7 @@
 @import '../../styles/global';
 
 @mixin button($main-color, $active-color, $highlight-color) {
-  transition: $timing-s;
+  transition: $timing-m;
   background-color: $main-color;
   outline: none;
   position: relative;
@@ -9,23 +9,23 @@
   &:hover {
     background-color: $highlight-color;
     font-weight: bold;
-    transition: font-weight $timing-s;
+    transition: font-weight $timing-m;
     text-shadow: 0 0 $space-xs rgba(255, 255, 255, 0.65) !important;
   }
 
   &:active {
-    transition: $timing-s;
+    transition: $timing-m;
     background-color: $active-color;
   }
 }
 
 .button {
   &.primary {
-    @include button($primary-color, $active-color, $highlight-color);
+    @include button($primary-dark, $active-color, $highlight-color);
   }
 
   &.white {
-    @include button($primary-color, $active-color, $highlight-color);
+    @include button($primary-dark, $active-color, $highlight-color);
   }
 
   &.transparent {

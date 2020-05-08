@@ -35,11 +35,11 @@
     padding: $space-xs;
 
     &.primary {
-      @include input($primary-color, $placeholder-light, $background-light);
+      @include input($primary-dark, $placeholder-light, $background-light);
     }
 
     &.light {
-      @include input($secondary-color, $placeholder-dark, $primary-color);
+      @include input($secondary-color, $placeholder-dark, $primary-dark);
     }
 
     &.transparent {
