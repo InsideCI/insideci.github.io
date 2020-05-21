@@ -1,13 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mada&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Reem+Kufi&display=swap');
 
-@font-face {
-  font-family: 'Century Gothic';
-  src: url(../../assets/fonts/gothic.ttf) format(truetype);
-}
-
-$primary-font: 'Century Gothic Light', sans-serif;
-$secondary-font: 'Rubik', sans-serif;
-$third-font: 'Mada', sans-serif;
-$fourth-font: 'Reem Kufi', sans-serif;
+$primary-font: 'Cabin', sans-serif;
+$secondary-font: 'Mada', sans-serif;

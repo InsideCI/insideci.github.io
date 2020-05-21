@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="188" height="193.367" viewBox="0 0 188 193.367">
+  <g id="bottom-left" transform="translate(-2206 -766.5)" style="isolation: isolate">
+    <path id="Rectangle_13" data-name="Rectangle 13" d="M0,0H31A31,31,0,0,1,62,31v0A31,31,0,0,1,31,62h0A31,31,0,0,1,0,31V0A0,0,0,0,1,0,0Z" transform="translate(2206 835.867)" fill="#1ff2ff"/>
+    <path id="Rectangle_20" data-name="Rectangle 20" d="M0,0H26A26,26,0,0,1,52,26v1A26,26,0,0,1,26,53h0A26,26,0,0,1,0,27V0A0,0,0,0,1,0,0Z" transform="translate(2336 959.867) rotate(-90)" fill="#6179e5"/>
+    <path id="Rectangle_19" data-name="Rectangle 19" d="M0,0H17.5A17.5,17.5,0,0,1,35,17.5v0A17.5,17.5,0,0,1,17.5,35h0A17.5,17.5,0,0,1,0,17.5V0A0,0,0,0,1,0,0Z" transform="translate(2206 835.867)" fill="#5d00ff"/>
+    <path id="Rectangle_21" data-name="Rectangle 21" d="M0,0H14.5A14.5,14.5,0,0,1,29,14.5v1A14.5,14.5,0,0,1,14.5,30h0A14.5,14.5,0,0,1,0,15.5V0A0,0,0,0,1,0,0Z" transform="translate(2336 959.867) rotate(-90)" fill="#1ff2ff"/>
+    <path id="Rectangle_15" data-name="Rectangle 15" d="M68,0h58a0,0,0,0,1,0,0V0A68,68,0,0,1,58,68H0a0,0,0,0,1,0,0v0A68,68,0,0,1,68,0Z" transform="translate(2394 835.867) rotate(180)" fill="#1ff2ff"/>
+    <path id="Path_20" data-name="Path 20" d="M68,0h56A68,68,0,0,1,56,68H0A68,68,0,0,1,68,0Z" transform="translate(2268 959.867) rotate(-90)" fill="#013475"/>
+    <path id="Rectangle_16" data-name="Rectangle 16" d="M37,0H69a0,0,0,0,1,0,0V0A37,37,0,0,1,32,37H0a0,0,0,0,1,0,0v0A37,37,0,0,1,37,0Z" transform="translate(2337 835.867) rotate(180)" fill="#013475"/>
+    <path id="Rectangle_23" data-name="Rectangle 23" d="M37.709,0H69.134a0,0,0,0,1,0,0V0A37.709,37.709,0,0,1,31.425,37.709H0a0,0,0,0,1,0,0v0A37.709,37.709,0,0,1,37.709,0Z" transform="translate(2268.371 766.5) rotate(90)" fill="#013475"/>
+    <path id="Rectangle_18" data-name="Rectangle 18" d="M37,0H68a0,0,0,0,1,0,0V0A37,37,0,0,1,31,37H0a0,0,0,0,1,0,0v0A37,37,0,0,1,37,0Z" transform="translate(2268 903.867) rotate(-90)" fill="#fff"/>
+    <path id="Subtraction_1" data-name="Subtraction 1" d="M0,62H0V0H61.832C61.944,1.42,62,2.859,62,4.276a53.965,53.965,0,0,1-4.872,22.469A57.491,57.491,0,0,1,43.841,45.093,62.237,62.237,0,0,1,24.133,57.464,65.576,65.576,0,0,1,0,62Z" transform="translate(2206 897.867)" fill="#6179e5"/>
+    <path id="Subtraction_2" data-name="Subtraction 2" d="M10,10a10.577,10.577,0,0,1-3.892-.732,10.255,10.255,0,0,1-1.7-.858,9.954,9.954,0,0,1-1.48-1.137A9.558,9.558,0,0,1,1.708,5.9,9.128,9.128,0,0,1,.786,4.314,8.7,8.7,0,0,1,0,.69C0,.46.009.228.027,0H19.973c.018.229.027.461.027.69a8.7,8.7,0,0,1-.786,3.624A9.129,9.129,0,0,1,18.292,5.9a9.558,9.558,0,0,1-1.221,1.378,9.954,9.954,0,0,1-1.48,1.137,10.255,10.255,0,0,1-1.7.858A10.577,10.577,0,0,1,10,10Z" transform="translate(2278 959.867) rotate(180)" fill="#1ff2ff"/>
+  </g>
+</svg>
