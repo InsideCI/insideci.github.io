@@ -1,20 +1,19 @@
 @import '../../styles/global';
 
 @mixin button($main-color, $active-color, $highlight-color) {
-  transition: $timing-m;
+  transition: $timing-l;
   background-color: $main-color;
   outline: none;
   position: relative;
+  cursor: pointer;
 
   &:hover {
     background-color: $highlight-color;
-    font-weight: bold;
-    transition: font-weight $timing-m;
     text-shadow: 0 0 $space-xs rgba(255, 255, 255, 0.65) !important;
+    transition: text-shadow $timing-m;
   }
 
   &:active {
-    transition: $timing-m;
     background-color: $active-color;
   }
 }
@@ -30,10 +29,6 @@
 
   &.transparent {
     @include button(transparent, transparent, transparent);
-  }
-
-  &.uppercase {
-    text-transform: uppercase;
   }
 
   &.full {

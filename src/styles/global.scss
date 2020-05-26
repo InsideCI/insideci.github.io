@@ -1,11 +1,11 @@
-@import './static/colors';
-@import './static/behavior';
-@import './static/structure';
+@import './modifier/colors';
+@import './modifier/behavior';
+@import './modifier/structure';
+@import './modifier/sizes';
+@import './modifier/timing';
 
 @import './typography/fonts';
-@import './typography/sizes';
 
-@import './animation/timing';
 @import './animation/animations';
 
 @import './mixin/button';

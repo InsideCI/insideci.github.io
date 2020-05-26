@@ -11,10 +11,11 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   color?: string;
   small?: boolean;
   full?: boolean;
+  centered?: boolean;
 }
 
 const Input: React.FC<Props> = (props) => {
-  const { name, label, color, small, full, ...rest } = props;
+  const { name, label, color, small, full, centered, ...rest } = props;
 
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -23,7 +24,8 @@ const Input: React.FC<Props> = (props) => {
   const classesInput = classNames(
     color ? color : 'transparent',
     small && 'small',
-    full && 'full'
+    full && 'full',
+    centered && 'centered'
   );
 
   useEffect(() => {

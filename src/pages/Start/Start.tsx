@@ -3,10 +3,13 @@ import './Start.scss';
 import React, { useState } from 'react';
 import { animated, config, useTransition } from 'react-spring';
 
-import bottomLeft from '../../assets/images/landing/bottom-left.svg';
-import bottomRight from '../../assets/images/landing/bottom-right.svg';
-import topLeft from '../../assets/images/landing/top-left.svg';
-import topRight from '../../assets/images/landing/top-right.svg';
+import Button from 'components/Button';
+import { Form } from '@unform/web';
+import Input from 'components/Input';
+import bottomLeft from 'assets/images/landing/bottom-left.svg';
+import bottomRight from 'assets/images/landing/bottom-right.svg';
+import topLeft from 'assets/images/landing/top-left.svg';
+import topRight from 'assets/images/landing/top-right.svg';
 
 interface Form {
   id: number;
@@ -16,6 +19,8 @@ type Props = React.HTMLProps<HTMLDivElement>;
 
 const Start: React.FC<Props> = () => {
   const [section, setSection] = useState(true);
+
+  const onSubmit = () => {};
 
   const landingBackground = () => (
     <section className={'background'}>
@@ -36,7 +41,21 @@ const Start: React.FC<Props> = () => {
     </div>
   );
 
-  const credentials = () => <>comé que ta por ai papai</>;
+  const credentials = () => (
+    <div className={'credentials'}>
+      <Form onSubmit={onSubmit} name={'credentials'}>
+        <Input
+          name={'registration'}
+          placeholder={'digite sua matricula'}
+          centered
+        />
+        <Button text={'entrar'} light />
+      </Form>
+      <footer>
+        <Button text={'entrar como visitante'} />
+      </footer>
+    </div>
+  );
 
   const sectionTransition = useTransition(section, null, {
     config: config.gentle,

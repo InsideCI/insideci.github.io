@@ -4,23 +4,25 @@ import React from 'react';
 import classNames from 'classnames';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text?: string;
   icon?: React.ReactNode;
-  color?: string;
+  text?: string;
+  color?: 'primary' | 'white';
   round?: boolean;
   light?: boolean;
   faded?: boolean;
+  full?: boolean;
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { text, icon, color, round, light, faded, ...rest } = props;
+  const { text, icon, color, round, light, faded, full, ...rest } = props;
 
   const classes = classNames(
     'button',
     color ? color : 'transparent',
     round && 'round',
     light && 'light',
-    faded && 'faded'
+    faded && 'faded',
+    full && 'full'
   );
 
   return (

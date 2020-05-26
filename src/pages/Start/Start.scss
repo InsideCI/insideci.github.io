@@ -8,6 +8,16 @@ $verticalShift: 10%;
   width: 100%;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  padding: $space-l;
+
+  color: $secondary-dark;
+}
+
 .landing {
   margin: 0;
   width: 100%;
@@ -56,17 +66,6 @@ $verticalShift: 10%;
   color: $background-light;
   header {
     padding: 35vh 10vw;
-    pointer-events: none;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    padding: 5vh;
-
-    color: $secondary-dark;
   }
 }
 
@@ -88,8 +87,49 @@ $verticalShift: 10%;
     width: 50%;
     align-self: center;
   }
+}
 
-  :nth-child(3) {
-    margin-top: $space-l;
+@media only screen and (min-width: 800px) {
+  $svg-size: max(200px, 15vw);
+
+  footer {
+    font-size: $horizontal-size-x;
+    padding: $horizontal-size-xl;
+  }
+
+  .background {
+    .tr {
+      width: $svg-size;
+    }
+    .tl {
+      width: $svg-size;
+    }
+    .br {
+      width: $svg-size;
+    }
+    .bl {
+      width: $svg-size;
+    }
+  }
+  .greetings {
+    header {
+      span {
+        font-size: $horizontal-size-x;
+      }
+      h1 {
+        font-size: $horizontal-size-xxl;
+      }
+    }
+  }
+
+  .credentials {
+    * {
+      font-size: $horizontal-size-x;
+    }
+
+    input {
+      width: 400px;
+      align-self: center;
+    }
   }
 }
