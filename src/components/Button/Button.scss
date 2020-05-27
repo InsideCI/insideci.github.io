@@ -1,15 +1,23 @@
 @import '../../styles/global';
 
-@mixin button($main-color, $active-color, $highlight-color) {
+@mixin button(
+  $font-color,
+  $backgroud-color,
+  $active-color,
+  $highlight-color,
+  $shadow-color
+) {
+  color: $font-color;
+
   transition: $timing-l;
-  background-color: $main-color;
+  background-color: $backgroud-color;
   outline: none;
   position: relative;
   cursor: pointer;
 
   &:hover {
     background-color: $highlight-color;
-    text-shadow: 0 0 $space-xs rgba(255, 255, 255, 0.65) !important;
+    @include text-shadow($shadow-color, 0.6);
     transition: text-shadow $timing-m;
   }
 
@@ -20,15 +28,33 @@
 
 .button {
   &.primary {
-    @include button($primary-dark, $active-color, $highlight-color);
+    @include button(
+      $primary-light,
+      $primary-dark,
+      $active-color,
+      $highlight-color,
+      $primary-dark
+    );
   }
 
   &.white {
-    @include button($primary-dark, $active-color, $highlight-color);
+    @include button(
+      $primary-light,
+      $primary-dark,
+      $active-color,
+      $highlight-color,
+      $primary-dark
+    );
   }
 
   &.transparent {
-    @include button(transparent, transparent, transparent);
+    @include button(
+      $primary-dark,
+      transparent,
+      transparent,
+      transparent,
+      $primary-dark
+    );
   }
 
   &.full {
@@ -40,7 +66,13 @@
   }
 
   &.light {
-    color: $background-light;
+    @include button(
+      $primary-light,
+      transparent,
+      transparent,
+      transparent,
+      $primary-light
+    );
   }
 
   &.faded {

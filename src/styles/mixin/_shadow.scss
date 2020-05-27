@@ -1,0 +1,7 @@
+@mixin shadow($color, $opacity) {
+  box-shadow: 0 0 $space-xs rgba($color, $opacity) !important;
+}
+
+@mixin text-shadow($color, $opacity) {
+  text-shadow: 0 0 $space-xs rgba($color, $opacity) !important;
+}

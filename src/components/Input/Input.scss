@@ -39,19 +39,19 @@
     }
 
     &.primary {
-      @include input($primary-dark, $placeholder-light, $background-light);
+      @include input($primary-dark, $placeholder-light, $primary-light);
     }
 
     &.light {
-      @include input($secondary-color, $placeholder-dark, $primary-dark);
+      @include input($primary-light, $placeholder-dark, $primary-dark);
     }
 
     &.transparent {
-      @include input(transparent, $placeholder-light, $background-light);
+      @include input(transparent, $placeholder-light, $primary-light);
       border-top: none;
       border-left: none;
       border-right: none;
-      border-color: $background-light;
+      border-color: $primary-light;
     }
 
     outline: none;

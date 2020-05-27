@@ -22,7 +22,7 @@ const Start: React.FC<Props> = () => {
 
   const onSubmit = () => {};
 
-  const landingBackground = () => (
+  const background = () => (
     <section className={'background'}>
       <img className={'tl'} src={topLeft} alt="topRight" />
       <img className={'tr'} src={topRight} alt="topRight" />
@@ -37,7 +37,9 @@ const Start: React.FC<Props> = () => {
         <span>Bem-vindo ao </span>
         <h1>CInside</h1>
       </header>
-      <footer onClick={() => setSection(!section)}>Entrar</footer>
+      <footer>
+        <Button full text={'Entrar'} onClick={() => setSection(!section)} />
+      </footer>
     </div>
   );
 
@@ -52,13 +54,13 @@ const Start: React.FC<Props> = () => {
         <Button text={'entrar'} light />
       </Form>
       <footer>
-        <Button text={'entrar como visitante'} />
+        <Button full text={'entrar como visitante'} />
       </footer>
     </div>
   );
 
   const sectionTransition = useTransition(section, null, {
-    config: config.gentle,
+    config: config.slow,
     from: { position: 'absolute', opacity: 0, transform: 'translateX(100%)' },
     enter: { opacity: 1, transform: 'translateX(0%)' },
     leave: { opacity: 0, transform: 'translateX(-100%)' },
@@ -66,7 +68,7 @@ const Start: React.FC<Props> = () => {
 
   return (
     <div className={'landing'}>
-      {landingBackground()}
+      {background()}
       {sectionTransition.map(({ item, key, props }) => {
         return item ? (
           <animated.div key={key} style={props}>

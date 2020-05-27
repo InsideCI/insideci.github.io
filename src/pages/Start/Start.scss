@@ -3,21 +3,6 @@
 $horizontalShift: 15%;
 $verticalShift: 10%;
 
-.landingPage {
-  position: absolute;
-  width: 100%;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  padding: $space-l;
-
-  color: $secondary-dark;
-}
-
 .landing {
   margin: 0;
   width: 100%;
@@ -30,7 +15,7 @@ footer {
 }
 
 .background {
-  color: $background-light;
+  color: $primary-light;
   position: absolute;
   pointer-events: none;
 
@@ -63,7 +48,7 @@ footer {
   height: 100vh;
   position: relative;
 
-  color: $background-light;
+  color: $primary-light;
   header {
     padding: 35vh 10vw;
   }
@@ -87,14 +72,42 @@ footer {
     width: 50%;
     align-self: center;
   }
+  .input input {
+    color: red;
+  }
 }
 
-@media only screen and (min-width: 800px) {
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: max(15%, 150px);
+  padding: $font-size-xxs;
+
+  color: $secondary-dark;
+}
+
+@media only screen and (min-width: $breakpoint-tablet) {
   $svg-size: max(200px, 15vw);
 
-  footer {
+  span,
+  .credentials {
     font-size: $horizontal-size-x;
-    padding: $horizontal-size-xl;
+    input {
+      width: $breakpoint-tablet/2;
+    }
+  }
+  h1 {
+    font-size: $horizontal-size-xxl;
+  }
+
+  footer {
+    .button {
+      font-size: $horizontal-size-x;
+    }
+    padding: $horizontal-size-s;
+    width: $svg-size;
   }
 
   .background {
@@ -109,27 +122,6 @@ footer {
     }
     .bl {
       width: $svg-size;
-    }
-  }
-  .greetings {
-    header {
-      span {
-        font-size: $horizontal-size-x;
-      }
-      h1 {
-        font-size: $horizontal-size-xxl;
-      }
-    }
-  }
-
-  .credentials {
-    * {
-      font-size: $horizontal-size-x;
-    }
-
-    input {
-      width: 400px;
-      align-self: center;
     }
   }
 }

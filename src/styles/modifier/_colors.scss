@@ -1,15 +1,21 @@
 $primary-dark: #1d3561;
 $secondary-dark: #171b2c;
-$secondary-color: #ffffff;
 
-$highlight-color: #3e5c94;
+$primary-light: #ffffff;
+$secondary-light: #1ff2ff;
+
+$highlight-color: #5d00ff;
+$active-color: #8640ff;
 $disabled-color: #999999;
-$active-color: #132442;
 
 $placeholder-dark: #1d35613a;
 $placeholder-light: #c9c9c940;
 
 $error-color: #da0000;
 
-$background-main: #f0f0f0;
-$background-light: #ffffff;
+// aliases
+$background-main: $primary-dark;
+$background-light: $primary-light;
+
+$dark-shadow: $primary-dark;
+$light-shadow: $primary-dark;
