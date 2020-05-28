@@ -1,17 +1,28 @@
-import axios from 'axios';
-import { Params, GenericApi } from './types/configs';
 import { API_ADDRESS, API_PORT } from '../config';
+import { GenericResource, Params } from './types/configs';
 
-export function NewGenericAPI<T>(resource: string): GenericApi<T> {
-  const API = axios.create({
+import axios from 'axios';
+
+/**
+ * Returns a set of basic endpoint generic functions based on desired type.
+ * @param resource Endpoint resource string.
+ */
+export function NewGenericClient<T>(resource: string): GenericResource<T> {
+  const axiosClient = axios.create({
     baseURL: API_ADDRESS + API_PORT,
   });
 
+  const resourceStr = resource[0] === '/' ? resource.substr(1) : resource;
+
   return {
-    list: (params: Params) => API.get<T>(`/${resource}`, { params }),
-    get: (id: number) => API.get<T>(`/${resource}/${id}`),
-    delete: (id: number) => API.delete<T>(`/${resource}/${id}`),
-    post: (model: T) => API.post<T>(`/${resource}`, { model }),
-    put: (id: number, model: T) => API.put<T>(`/${resource}/${id}`, { model }),
+    list: (params: Params) =>
+      axiosClient.get<T>(`/${resourceStr}`, {
+        params,
+      }),
+    get: (id: number) => axiosClient.get<T>(`/${resourceStr}/${id}`),
+    delete: (id: number) => axiosClient.delete<T>(`/${resourceStr}/${id}`),
+    post: (model: T) => axiosClient.post<T>(`/${resourceStr}`, model),
+    put: (id: number, model: T) =>
+      axiosClient.put<T>(`/${resourceStr}/${id}`, model),
   };
 }

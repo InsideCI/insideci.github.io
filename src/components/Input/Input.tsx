@@ -47,7 +47,7 @@ const Input: React.FC<Props> = (props) => {
         defaultValue={defaultValue}
         {...rest}
       />
-      {error && <span className={'input__error'}>error</span>}
+      {error && <footer>{error}</footer>}
     </div>
   );
 };

@@ -43,13 +43,13 @@ $verticalShift: 10%;
   }
 }
 
-.greetings {
+.welcome {
   width: 100vw;
   height: 100vh;
   position: relative;
 
-  color: $primary-light;
   header {
+    color: $primary-light;
     padding: 35vh 10vw;
   }
 }
@@ -77,6 +77,15 @@ $verticalShift: 10%;
   }
 }
 
+.greetings {
+  line-height: 100vh;
+  width: 100vw;
+
+  text-align: center;
+  color: $primary-light;
+  pointer-events: none;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -86,29 +95,13 @@ footer {
   padding: $font-size-xxs;
 
   color: $secondary-dark;
+  * {
+    font-size: $font-size-m;
+  }
 }
 
 @media only screen and (min-width: $breakpoint-tablet) {
   $svg-size: max(200px, 15vw);
-
-  span,
-  .credentials {
-    font-size: $horizontal-size-x;
-    input {
-      width: $breakpoint-tablet/2;
-    }
-  }
-  h1 {
-    font-size: $horizontal-size-xxl;
-  }
-
-  footer {
-    .button {
-      font-size: $horizontal-size-x;
-    }
-    padding: $horizontal-size-s;
-    width: $svg-size;
-  }
 
   .background {
     .tr {
@@ -123,5 +116,24 @@ footer {
     .bl {
       width: $svg-size;
     }
+  }
+
+  span,
+  .credentials {
+    font-size: $horizontal-size-x;
+    input {
+      width: $breakpoint-tablet/2;
+    }
+  }
+  h1 {
+    font-size: $horizontal-size-xxl;
+  }
+
+  footer {
+    .button {
+      font-size: $horizontal-size-xl;
+      padding: $horizontal-size-xxs;
+    }
+    width: $svg-size;
   }
 }

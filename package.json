@@ -10,8 +10,8 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^25.2.1",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.0",
+    "@types/react": "^16.9.35",
     "@unform/core": "^2.1.0",
     "@unform/web": "^2.1.0",
     "axios": "^0.19.2",
@@ -21,12 +21,14 @@
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
     "sass": "^1.26.3",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "underscore.string": "^3.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -b master -d build"
@@ -50,6 +52,7 @@
     "@types/classnames": "^2.2.10",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/underscore.string": "0.0.38",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "gh-pages": "^2.2.0",

@@ -6,7 +6,7 @@ export interface Params {
   order?: Array<string>;
 }
 
-export interface GenericApi<T> {
+export interface GenericResource<T> {
   list: (params: Params) => Promise<AxiosResponse<T>>;
   get: (id: number) => Promise<AxiosResponse<T>>;
   delete: (id: number) => Promise<AxiosResponse<T>>;
