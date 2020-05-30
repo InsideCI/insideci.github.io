@@ -55,7 +55,7 @@ const Start: React.FC<Props> = () => {
   const welcome = (key: string, style: AnimatedValue<CSSProperties>) => (
     <animated.div key={key} style={style} className="welcome">
       <header>
-        <span>Bem-vindo ao</span>
+        <h4>Bem-vindo ao</h4>
         <h1>CInside</h1>
       </header>
       <footer>
@@ -70,8 +70,8 @@ const Start: React.FC<Props> = () => {
         <Input name={'id'} placeholder={'digite sua matricula'} centered />
         <Button text={'entrar'} light />
       </Form>
-      {error && <section>deu bode morales</section>}
-      <footer>
+      {error && <span>deu bode morales</span>}
+      <footer className={'guest'}>
         <Button
           onClick={() => setGuest(true)}
           full

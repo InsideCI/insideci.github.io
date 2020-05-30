@@ -3,6 +3,14 @@
 $horizontalShift: 15%;
 $verticalShift: 10%;
 
+$svg-width: 50px;
+$scale-svg: 20vw;
+$min-size: 3;
+$max-size: 6;
+$corner-size-min: $min-size * $svg-width;
+$corner-size-max: $max-size * $svg-width;
+$button-corner-scale: 1.5;
+
 .landing {
   margin: 0;
   width: 100%;
@@ -12,6 +20,9 @@ $verticalShift: 10%;
 
   background-color: $secondary-dark;
   display: grid;
+  * {
+    font-size: max(#{$font-size-ssm}, #{$horizontal-size-xs});
+  }
 }
 
 .background {
@@ -22,24 +33,31 @@ $verticalShift: 10%;
   width: 100vw;
   height: 100vh;
 
-  .tr {
-    position: absolute;
-    right: 0;
-  }
-
   .tl {
     position: absolute;
     left: 0;
+    width: clamp($corner-size-min/3, $scale-svg, $corner-size-max/3);
   }
-  .br {
+  .tr {
     position: absolute;
-    bottom: 0;
     right: 0;
+    width: clamp($corner-size-min, $scale-svg, $corner-size-max);
   }
   .bl {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: clamp($corner-size-min, $scale-svg, $corner-size-max);
+  }
+  .br {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: clamp(
+      $corner-size-min * $button-corner-scale,
+      $scale-svg,
+      $corner-size-max * $button-corner-scale
+    );
   }
 }
 
@@ -51,6 +69,9 @@ $verticalShift: 10%;
   header {
     color: $primary-light;
     padding: 35vh 10vw;
+    h1 {
+      font-size: max(#{$font-size-xl}, #{$horizontal-size-xxl});
+    }
   }
 }
 
@@ -59,20 +80,14 @@ $verticalShift: 10%;
   width: 100vw;
   height: 100vh;
 
-  * {
-    font-size: $font-size-s;
-  }
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 
-  input {
-    width: 50%;
+  * input {
+    width: 70%;
     align-self: center;
-  }
-  .input input {
     color: red;
   }
 }
@@ -91,49 +106,30 @@ footer {
   bottom: 0;
   right: 0;
 
-  width: max(15%, 150px);
-  padding: $font-size-xxs;
+  display: flex;
+  align-items: center;
 
-  color: $secondary-dark;
-  * {
-    font-size: $font-size-m;
-  }
+  $footer-scale: 0.15;
+  margin-right: -($corner-size-min * $footer-scale);
+  margin-bottom: -($corner-size-min * $footer-scale);
+
+  width: clamp(
+    $corner-size-min * $button-corner-scale,
+    $scale-svg,
+    $corner-size-max * $button-corner-scale
+  );
+  height: clamp(
+    $corner-size-min * $button-corner-scale,
+    $scale-svg,
+    $corner-size-max * $button-corner-scale
+  );
 }
 
 @media only screen and (min-width: $breakpoint-tablet) {
-  $svg-size: max(200px, 15vw);
-
-  .background {
-    .tr {
-      width: $svg-size;
-    }
-    .tl {
-      width: $svg-size;
-    }
-    .br {
-      width: $svg-size;
-    }
-    .bl {
-      width: $svg-size;
-    }
+  * {
+    font-size: $horizontal-size-m;
   }
-
-  span,
-  .credentials {
-    font-size: $horizontal-size-x;
-    input {
-      width: $breakpoint-tablet/2;
-    }
-  }
-  h1 {
-    font-size: $horizontal-size-xxl;
-  }
-
-  footer {
-    .button {
-      font-size: $horizontal-size-xl;
-      padding: $horizontal-size-xxs;
-    }
-    width: $svg-size;
+  .input input {
+    width: 50%;
   }
 }
