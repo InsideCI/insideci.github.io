@@ -1,4 +1,4 @@
-@mixin shadow($color, $opacity) {
+@mixin shadow($color: $dark-shadow, $opacity: 0.6) {
   box-shadow: 0 0 $space-xs rgba($color, $opacity) !important;
 }
 

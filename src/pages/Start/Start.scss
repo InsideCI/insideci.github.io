@@ -18,8 +18,6 @@ $button-corner-scale: 1.5;
   position: relative;
   overflow: hidden;
 
-  background-color: $secondary-dark;
-  display: grid;
   * {
     font-size: max(#{$font-size-ssm}, #{$horizontal-size-xs});
   }

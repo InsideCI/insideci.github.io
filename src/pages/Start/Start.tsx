@@ -6,7 +6,9 @@ import React, { CSSProperties, useState } from 'react';
 import Button from 'components/Button';
 import { Form } from '@unform/web';
 import Input from 'components/Input';
+import { Link } from 'react-router-dom';
 import { NewGenericClient } from '../../store/client';
+import Notification from '../../components/Notification/Notification';
 import { Student } from 'store/types/models';
 import { SubmitHandler } from '@unform/core';
 import bottomLeft from 'assets/images/landing/bottom-left.svg';
@@ -26,7 +28,6 @@ type Props = React.HTMLProps<HTMLDivElement>;
 const Start: React.FC<Props> = () => {
   const [section, setSection] = useState(0);
   const [error, setError] = useState(false);
-  const [guest, setGuest] = useState(false);
   const [student, setStudent] = useState<Student>();
 
   const onSubmit: SubmitHandler<Form> = ({ id }) => {
@@ -70,13 +71,17 @@ const Start: React.FC<Props> = () => {
         <Input name={'id'} placeholder={'digite sua matricula'} centered />
         <Button text={'entrar'} light />
       </Form>
-      {error && <span>deu bode morales</span>}
-      <footer className={'guest'}>
-        <Button
-          onClick={() => setGuest(true)}
-          full
-          text={'entrar como visitante'}
+      {error && (
+        <Notification
+          message={'Estudante não encontrado.'}
+          duration={3000}
+          type={'error'}
         />
+      )}
+      <footer className={'guest'}>
+        <Link to={'/dashboard'}>
+          <Button full text={'entrar como visitante'} />
+        </Link>
       </footer>
     </animated.div>
   );
@@ -93,32 +98,24 @@ const Start: React.FC<Props> = () => {
     );
   };
 
-  const sections = [
-    { id: 0, component: welcome },
-    { id: 1, component: credentials },
-    { id: 2, component: greetings },
-  ];
+  const sections = [welcome, credentials, greetings];
 
-  const sectionTransition = useTransition(
-    sections[section],
-    (item) => item.id,
-    {
-      config: config.slow,
-      from: {
-        position: 'absolute',
-        opacity: 0,
-        transform: 'translate3d(100%,0,0)',
-      },
-      enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-      leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
-    }
-  );
+  const sectionTransition = useTransition(section, (item) => item, {
+    config: config.slow,
+    from: {
+      position: 'absolute',
+      opacity: 0,
+      transform: 'translate3d(100%,0,0)',
+    },
+    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+    leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+  });
 
   return (
     <div className={'landing'}>
       {background()}
       {sectionTransition.map(({ item, props, key }) =>
-        item.component(key, props)
+        sections[item](key, props)
       )}
     </div>
   );

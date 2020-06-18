@@ -1,0 +1,28 @@
+@import '../../styles/global.scss';
+
+.horizontal-scroll {
+  overflow: hidden;
+
+  .scrollable {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+}
+
+main {
+  margin: $space-s;
+  overflow: hidden;
+}
+
+.cards {
+  .card {
+    margin: 30px 0;
+    width: 100px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
